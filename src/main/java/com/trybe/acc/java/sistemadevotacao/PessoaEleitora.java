@@ -54,10 +54,16 @@ public class PessoaEleitora extends Pessoa {
       this.isElegitToVote = isElegitToVote;
   }
 
+  /**
+   * @param candidato the method to vote in one candidate, only one vote per person
+   */
   public void vote(PessoaCandidata candidato) {
     if (isElegitToVote) {
       candidato.beVote();
+      System.out.println("Esta pessoa votou em " + candidato.name);
       setIsElegitToVote(false);
+    } else {
+      System.out.println("Esta pessoa já votou");
     }
   }
 
