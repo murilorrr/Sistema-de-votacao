@@ -3,7 +3,7 @@ package com.trybe.acc.java.sistemadevotacao;
 public class PessoaCandidata extends Pessoa {
 
   private int number;
-  private short NumberOfVotes = 0;
+  private short numberOfVotes = 0;
 
   PessoaCandidata(String name, int number) {
     super(name);
@@ -25,11 +25,11 @@ public class PessoaCandidata extends Pessoa {
   }
 
   public void beVote() {
-    this.NumberOfVotes += 1;
+    this.numberOfVotes += 1;
   }
 
   public short votesView() {
-    return NumberOfVotes;
+    return numberOfVotes;
   }
 
   public int getNumber() {
