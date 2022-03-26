@@ -5,14 +5,19 @@ import java.util.Scanner;
 public class Principal {
 
   static Scanner scanner = new Scanner(System.in);
+  /**
+   * Metodo principal que vai executar a partir do inicio do sistema.
+   * @param args its this, args.
+   */
   public static void main(String[] args) {
+
     GerenciamentoVotacao votacao = new GerenciamentoVotacao();
 
     cadastrarCandidatos(votacao);
 
     cadastrarEleitores(votacao);
 
-    iniciarVotação(votacao);
+    iniciarVotacao(votacao);
   }
 
   /**
@@ -21,13 +26,13 @@ public class Principal {
    * @author Murilo
    */
   private static short openMenuforPessoaCandidata(Scanner scanner) {
-    short inputNumber = 0;
     System.out.println("Cadastrar pessoa candidata?");
     String entrySystemString =
-        "1 - Sim\n2 - Não";
+    "1 - Sim\n2 - Não";
     System.out.println(entrySystemString);
     System.out.println("Entre com o número correspondente à opção desejada:");
-
+    
+    short inputNumber = 0;
     inputNumber = scanner.nextShort();
 
     return inputNumber;
@@ -39,13 +44,13 @@ public class Principal {
    * @author Murilo
    */
   private static short openMenuforPessoaEleitora(Scanner scanner) {
-    short inputNumber = 0;
     System.out.println("Cadastrar pessoa eleitora?");
     String entrySystemString =
-        "1 - Sim\n2 - Não";
+    "1 - Sim\n2 - Não";
     System.out.println(entrySystemString);
     System.out.println("Entre com o número correspondente à opção desejada:");
-
+    
+    short inputNumber = 0;
     inputNumber = scanner.nextShort();
 
     return inputNumber;
@@ -57,12 +62,12 @@ public class Principal {
    * @author Murilo
    */
   private static short openMenuforVotation(Scanner scanner) {
-    short inputNumber = 0;
     System.out.println("Entre com o número correspondente à opção desejada:");
     String entrySystemString =
-        "1 - Votar\n2 - Resultado Parcial\n3 - Finalizar Votação";
-        System.out.println(entrySystemString);
-
+    "1 - Votar\n2 - Resultado Parcial\n3 - Finalizar Votação";
+    System.out.println(entrySystemString);
+    
+    short inputNumber = 0;
     inputNumber = scanner.nextShort();
 
     return inputNumber;
@@ -111,7 +116,7 @@ public class Principal {
    * @param votacao instancia da votação atual
    * @author Murilo
    */
-  private static void iniciarVotação(GerenciamentoVotacao votacao) {
+  private static void iniciarVotacao(GerenciamentoVotacao votacao) {
     short input = 0;
     while (input != 3) {
       input = openMenuforVotation(scanner);
