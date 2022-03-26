@@ -2,7 +2,6 @@ package com.trybe.acc.java.sistemadevotacao;
 
 public class PessoaEleitora extends Pessoa {
 
-  private String name;
   private String cpf;
   private boolean isElegitToVote = true;
 
@@ -57,10 +56,9 @@ public class PessoaEleitora extends Pessoa {
   /**
    * @param candidato the method to vote in one candidate, only one vote per person
    */
-  public void vote(PessoaCandidata candidato) {
+  public void vote() {
     if (isElegitToVote) {
-      candidato.beVote();
-      System.out.println("Esta pessoa votou em " + candidato.name);
+      System.out.println("Esta pessoa votou em alguem");
       setIsElegitToVote(false);
     } else {
       System.out.println("Esta pessoa já votou");

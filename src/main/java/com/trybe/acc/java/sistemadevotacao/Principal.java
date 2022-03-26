@@ -1,11 +1,9 @@
 package com.trybe.acc.java.sistemadevotacao;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Principal {
 
-  private static PessoaEleitora userPessoa = null;
   static Scanner scanner = new Scanner(System.in);
   public static void main(String[] args) {
     GerenciamentoVotacao votacao = new GerenciamentoVotacao();
@@ -109,7 +107,7 @@ public class Principal {
   }
 
   /**
-   * Metodo para inciar votacao.
+   * Metodo para inciar votacao. Dentre realmente votar ou ver os resultados.
    * @param votacao instancia da votação atual
    * @author Murilo
    */
@@ -117,23 +115,12 @@ public class Principal {
     short input = 0;
     while (input != 3) {
       input = openMenuforVotation(scanner);
-      if (input == 0) {
+      if (input == 1) {
         System.out.println("Entre com o cpf da pessoa eleitora:");
         String cpfNumber = scanner.next();
-        ArrayList<PessoaEleitora> eleitores = votacao.getListEleitoras();
-        for (PessoaEleitora eleitor : eleitores) {
-          if (eleitor.getCpf() == cpfNumber) {
-            userPessoa = eleitor;
-          }
-        }
         System.out.println("Entre com o número da pessoa candidata:");
         int numeroPessoaCandidata = scanner.nextInt();
-        ArrayList<PessoaCandidata> candidatos = votacao.getListCandidates();
-        for (PessoaCandidata candidato : candidatos) {
-          if (numeroPessoaCandidata == candidato.getNumber()) {
-            userPessoa.vote(candidato);
-          }
-        }
+        votacao.votar(cpfNumber, numeroPessoaCandidata);
       } else {
         // mostrar resultado parcial
       }
