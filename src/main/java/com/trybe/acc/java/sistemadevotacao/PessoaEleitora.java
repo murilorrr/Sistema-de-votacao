@@ -61,7 +61,6 @@ public class PessoaEleitora extends Pessoa {
 
   /**
    * Metodo que abstrai o voto do eleitor.
-   * @param candidato the method to vote in one candidate, only one vote per person
    */
   public void vote() {
     if (isElegitToVote()) {
