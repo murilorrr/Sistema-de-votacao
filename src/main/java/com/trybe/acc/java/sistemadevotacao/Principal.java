@@ -1,6 +1,6 @@
 package com.trybe.acc.java.sistemadevotacao;
 
-import java.io.InputStream;
+// import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Principal {
@@ -9,8 +9,22 @@ public class Principal {
   public static void main(String[] args) {
     GerenciamentoVotacao votacao = new GerenciamentoVotacao();
 
-    openMenuWithScanner(scanner);
-    votacao.cadastrarPessoaCandidata();
+    short input = 1;
+    while (input == 1) {
+      input = openMenuWithScanner(scanner);
+      if (input == 1) {
+        System.out.println("Entre com o nome da pessoa candidata:");
+        String nome = scanner.next();
+        System.out.println("Entre com o número da pessoa candidata:");
+        short numeroCandidato = scanner.nextShort();
+        votacao.cadastrarPessoaCandidata(nome, numeroCandidato);
+      //   ArrayList<Pessoa> pessoas = votacao.getList();
+      //   for (Pessoa pessoa : pessoas) {
+      //     System.out.println(pessoa.name);
+      // }
+      }
+    }
+
 
   }
 
@@ -27,9 +41,8 @@ public class Principal {
     System.out.println(entrySystemString);
     System.out.println("Entre com o número correspondente à opção desejada:");
 
-    if (scanner.hasNextShort()) {
-      inputNumber = scanner.nextShort();
-    }
+    inputNumber = scanner.nextShort();
+
     return inputNumber;
   }
 
