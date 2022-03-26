@@ -1,5 +1,6 @@
 package com.trybe.acc.java.sistemadevotacao;
 
+import java.util.ArrayList;
 // import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -18,13 +19,13 @@ public class Principal {
         System.out.println("Entre com o número da pessoa candidata:");
         short numeroCandidato = scanner.nextShort();
         votacao.cadastrarPessoaCandidata(nome, numeroCandidato);
-      //   ArrayList<Pessoa> pessoas = votacao.getList();
-      //   for (Pessoa pessoa : pessoas) {
-      //     System.out.println(pessoa.name);
-      // }
       }
     }
 
+    ArrayList<PessoaCandidata> candidatos = votacao.getListCandidates();
+    for (PessoaCandidata pessoaCandidata : candidatos) {
+      System.out.println(pessoaCandidata.getNome() + pessoaCandidata.getNumber());
+    }
 
   }
 

@@ -13,14 +13,14 @@ public class PessoaCandidata extends Pessoa {
   /**
    * @return short return the number
    */
-  public int getNumber() {
+  public int getNumero() {
       return number;
   }
 
   /**
    * @param number the number to set
    */
-  public void setNumber(short number) {
+  public void setNumero(int number) {
       this.number = number;
   }
 
@@ -30,6 +30,10 @@ public class PessoaCandidata extends Pessoa {
 
   public short votesView() {
     return NumberOfVotes;
+  }
+
+  public int getNumber() {
+    return this.number;
   }
 
 }

@@ -8,11 +8,11 @@ abstract class Pessoa implements IPessoa {
     this.name = name;
   }
 
-  public String getName() {
+  public String getNome() {
     return this.name;
   };
 
-  public void setName(String newName) {
+  public void setNome(String newName) {
     this.name = newName;
   };
 
