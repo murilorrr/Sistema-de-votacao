@@ -50,7 +50,7 @@ public class PessoaEleitora extends Pessoa {
   /**
    * @param isElegitToVote the isElegitToVote to set
    */
-  public void setIsElegitToVote(boolean isElegitToVote) {
+  private void setIsElegitToVote(boolean isElegitToVote) {
       this.isElegitToVote = isElegitToVote;
   }
 
