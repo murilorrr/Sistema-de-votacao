@@ -11,6 +11,7 @@ public class PessoaCandidata extends Pessoa {
   }
 
   /**
+   * Retorna o numero da pessoa candidata
    * @return short return the number
    */
   public int getNumero() {
@@ -18,20 +19,32 @@ public class PessoaCandidata extends Pessoa {
   }
 
   /**
+   * Seta um novo numero da pessoa candidata
    * @param number the number to set
    */
   public void setNumero(int number) {
       this.number = number;
   }
 
+  /**
+   * Acrescenta em um a quantidade de votos do candidato
+   */
   public void beVote() {
     this.numberOfVotes += 1;
   }
 
+  /**
+   * Retorna o numero de votos que o candidato já recebeu
+   * @return short return number of votes
+   */
   public short votesView() {
     return numberOfVotes;
   }
 
+  /**
+   * Retorna o numero de candidatura respectivo da pessoa candidata
+   * @return int return number of candidate
+   */
   public int getNumber() {
     return this.number;
   }
