@@ -15,7 +15,7 @@ public class PessoaEleitora extends Pessoa {
    * @return String return the name
    */
   public String getName() {
-      return name;
+    return name;
   }
 
   /**
@@ -23,7 +23,7 @@ public class PessoaEleitora extends Pessoa {
    * @param name the name to set
    */
   public void setName(String name) {
-      this.name = name;
+    this.name = name;
   }
 
   /**
@@ -31,7 +31,7 @@ public class PessoaEleitora extends Pessoa {
    * @return String return the cpf
    */
   public String getCpf() {
-      return cpf;
+    return cpf;
   }
 
   /**
@@ -39,7 +39,7 @@ public class PessoaEleitora extends Pessoa {
    * @param cpf the cpf to set
    */
   public void setCpf(String cpf) {
-      this.cpf = cpf;
+    this.cpf = cpf;
   }
 
 
@@ -48,7 +48,7 @@ public class PessoaEleitora extends Pessoa {
    * @return boolean return the isElegitToVote
    */
   public boolean isElegitToVote() {
-      return isElegitToVote;
+    return isElegitToVote;
   }
 
   /**
@@ -56,7 +56,7 @@ public class PessoaEleitora extends Pessoa {
    * @param isElegitToVote the isElegitToVote to set
    */
   private void setIsElegitToVote(boolean isElegitToVote) {
-      this.isElegitToVote = isElegitToVote;
+    this.isElegitToVote = isElegitToVote;
   }
 
   /**
