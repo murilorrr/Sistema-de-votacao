@@ -15,7 +15,7 @@ public class PessoaCandidata extends Pessoa {
    * @return short return the number
    */
   public int getNumero() {
-      return number;
+    return number;
   }
 
   /**
@@ -23,7 +23,7 @@ public class PessoaCandidata extends Pessoa {
    * @param number the number to set
    */
   public void setNumero(int number) {
-      this.number = number;
+    this.number = number;
   }
 
   /**

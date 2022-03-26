@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Principal {
 
   static Scanner scanner = new Scanner(System.in);
+
   /**
    * Metodo principal que vai executar a partir do inicio do sistema.
    * @param args its this, args.
@@ -27,8 +28,7 @@ public class Principal {
    */
   private static short openMenuforPessoaCandidata(Scanner scanner) {
     System.out.println("Cadastrar pessoa candidata?");
-    String entrySystemString =
-    "1 - Sim\n2 - Não";
+    String entrySystemString = "1 - Sim\n2 - Não";
     System.out.println(entrySystemString);
     System.out.println("Entre com o número correspondente à opção desejada:");
     
@@ -45,8 +45,7 @@ public class Principal {
    */
   private static short openMenuforPessoaEleitora(Scanner scanner) {
     System.out.println("Cadastrar pessoa eleitora?");
-    String entrySystemString =
-    "1 - Sim\n2 - Não";
+    String entrySystemString = "1 - Sim\n2 - Não";
     System.out.println(entrySystemString);
     System.out.println("Entre com o número correspondente à opção desejada:");
     
@@ -63,8 +62,7 @@ public class Principal {
    */
   private static short openMenuforVotation(Scanner scanner) {
     System.out.println("Entre com o número correspondente à opção desejada:");
-    String entrySystemString =
-    "1 - Votar\n2 - Resultado Parcial\n3 - Finalizar Votação";
+    String entrySystemString = "1 - Votar\n2 - Resultado Parcial\n3 - Finalizar Votação";
     System.out.println(entrySystemString);
     
     short inputNumber = 0;

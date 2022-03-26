@@ -38,16 +38,16 @@ public class GerenciamentoVotacao {
 
   /**
    * Metodo para votar em uma pessoa candidata.
-   * @param personsCPF is cpf da pessoa eleitora
+   * @param personsCpf is cpf da pessoa eleitora
    * @param numeroPessoaCandidata is integer, numero da pessoa candidatas
    * @author Murilo
    */
-  public void votar(String personsCPF, int numeroPessoaCandidata) {
+  public void votar(String personsCpf, int numeroPessoaCandidata) {
     // *IMPORTANTE: cada pessoa eleitora só pode votar uma única vez.
     // * tenho que somar um voto na pessoa votada e subtrair o direito de voto na pessoa votante
 
     for (PessoaEleitora eleitor : listPessoasEleitoras) {
-      if (eleitor.getCpf() == personsCPF) {
+      if (eleitor.getCpf() == personsCpf) {
         eleitor.vote();
       }
     }
@@ -67,11 +67,13 @@ public class GerenciamentoVotacao {
     // para candidato printa o numero de votos dele senao for 0
     for (PessoaCandidata pessoaCandidata : listPessoasCandidatas) {
       System.out.println("Nome: "
-        + pessoaCandidata.getNome() + " "
-        + pessoaCandidata.votesView()
-        + "votos "
-        + "( " + "porcentagem tal de votos"
-        + " )");
+          + pessoaCandidata.getNome()
+          + " "
+          + pessoaCandidata.votesView()
+          + "votos "
+          + "( " + "porcentagem tal de votos"
+          + " )"
+      );
       // TODO implementar a porcentagem
     }
   }
