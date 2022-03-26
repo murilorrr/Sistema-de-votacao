@@ -10,10 +10,10 @@ abstract class Pessoa implements IPessoa {
 
   public String getNome() {
     return this.name;
-  };
+  }
 
   public void setNome(String newName) {
     this.name = newName;
-  };
+  }
 
 }
