@@ -6,5 +6,6 @@ package com.trybe.acc.java.sistemadevotacao;
  */
 public interface IPessoa {
   abstract String getNome();
+
   abstract void setNome(String name);
 }
