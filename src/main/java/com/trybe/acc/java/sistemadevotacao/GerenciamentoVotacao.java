@@ -15,6 +15,7 @@ public class GerenciamentoVotacao {
 
 
   /**
+   * Metodo para cadastrar uma pessoa candidata num array de candidatos.
    * @param nome is string, nome da pessoa candidata
    * @param numero is integer,  numero da pessoa candidata
    * @author Murilo
@@ -25,6 +26,7 @@ public class GerenciamentoVotacao {
   }
 
   /**
+   * Metodo para cadastrar uma pessoa eleitora num array de eleitores.
    * @param nome is string, nome da pessoa eleitora
    * @param numero is integer,  cpf da pessoa eleitora
    * @author Murilo
@@ -35,6 +37,7 @@ public class GerenciamentoVotacao {
   }
 
   /**
+   * Metodo para votar em uma pessoa candidata.
    * @param personsCPF is cpf da pessoa eleitora
    * @param numeroPessoaCandidata is integer, numero da pessoa candidatas
    * @author Murilo
@@ -50,31 +53,31 @@ public class GerenciamentoVotacao {
     }
 
     for (PessoaCandidata candidato : listPessoasCandidatas) {
-      if (candidato.getNumber() == numeroPessoaCandidata ) {
+      if (candidato.getNumber() == numeroPessoaCandidata) {
         candidato.beVote();
       }
     }
   }
 
   /**
-   * Mostrar os resultados atuais da votação, parciais ou não
+   * Mostrar os resultados atuais da votação, parciais ou não.
    * @author Murilo
    */
   public void mostrarResultado() {
     // para candidato printa o numero de votos dele senao for 0
     for (PessoaCandidata pessoaCandidata : listPessoasCandidatas) {
       System.out.println("Nome: "
-      + pessoaCandidata.getNome() + " "
-      + pessoaCandidata.votesView()
-      + "votos "
-      + "( " + "porcentagem tal de votos"
-      + " )");
+        + pessoaCandidata.getNome() + " "
+        + pessoaCandidata.votesView()
+        + "votos "
+        + "( " + "porcentagem tal de votos"
+        + " )");
       // TODO implementar a porcentagem
     }
   }
 
   /**
-   * Retorna lista de Pessoas candidatas
+   * Retorna lista de Pessoas candidatas.
    * @author Murilo
    */
   public ArrayList<PessoaCandidata> getListCandidates() {
@@ -82,7 +85,7 @@ public class GerenciamentoVotacao {
   }
 
   /**
-   * Retorna lista de Pessoas eleitoras
+   * Retorna lista de Pessoas eleitoras.
    * @author Murilo
    */
   public ArrayList<PessoaEleitora> getListEleitoras() {
