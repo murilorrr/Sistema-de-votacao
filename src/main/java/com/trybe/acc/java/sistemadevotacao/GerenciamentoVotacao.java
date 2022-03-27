@@ -1,11 +1,9 @@
 package com.trybe.acc.java.sistemadevotacao;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class GerenciamentoVotacao {
 
-  Scanner scanner;
   private ArrayList<PessoaCandidata> listPessoasCandidatas = new ArrayList<PessoaCandidata>();
   private ArrayList<PessoaEleitora> listPessoasEleitoras = new ArrayList<PessoaEleitora>();
 
@@ -22,6 +20,12 @@ public class GerenciamentoVotacao {
    */
   public void cadastrarPessoaCandidata(String nome, int numero) {
     PessoaCandidata candidato = new PessoaCandidata(nome, numero);
+    for (PessoaCandidata pessoaCandidata : listPessoasCandidatas) {
+      if (pessoaCandidata.getNumero() == numero) {
+        System.out.println("Número pessoa candidata já utilizado!");
+        return;
+      }
+    }
     listPessoasCandidatas.add(candidato);
   }
 
@@ -33,6 +37,12 @@ public class GerenciamentoVotacao {
    */
   public void cadastrarPessoaEleitora(String nome, String numero) {
     PessoaEleitora eleitora = new PessoaEleitora(nome, numero);
+    for (PessoaEleitora pessoaEleitora : listPessoasEleitoras) {
+      if (pessoaEleitora.getCpf().equals(numero)) {
+        System.out.println("Pessoa eleitora já cadastrada!");
+        return;
+      }
+    }
     listPessoasEleitoras.add(eleitora);
   }
 
@@ -47,13 +57,13 @@ public class GerenciamentoVotacao {
     // * tenho que somar um voto na pessoa votada e subtrair o direito de voto na pessoa votante
 
     for (PessoaEleitora eleitor : listPessoasEleitoras) {
-      if (eleitor.getCpf() == personsCpf) {
+      if (eleitor.getCpf().equals(personsCpf)) {
         eleitor.vote();
       }
     }
 
     for (PessoaCandidata candidato : listPessoasCandidatas) {
-      if (candidato.getNumber() == numeroPessoaCandidata) {
+      if (candidato.getNumero() == numeroPessoaCandidata) {
         candidato.beVote();
       }
     }

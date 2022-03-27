@@ -67,7 +67,7 @@ public class PessoaEleitora extends Pessoa {
       System.out.println("Esta pessoa votou em alguem");
       setIsElegitToVote(false);
     } else {
-      System.out.println("Esta pessoa já votou");
+      System.out.println("Pessoa eleitora já votou!");
     }
   }
 

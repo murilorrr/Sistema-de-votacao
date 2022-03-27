@@ -12,10 +12,10 @@ public class PessoaCandidata extends Pessoa {
 
   /**
    * Retorna o numero da pessoa candidata.
-   * @return short return the number
+   * @return int return the number
    */
   public int getNumero() {
-    return number;
+    return this.number;
   }
 
   /**
@@ -39,14 +39,6 @@ public class PessoaCandidata extends Pessoa {
    */
   public short votesView() {
     return numberOfVotes;
-  }
-
-  /**
-   * Retorna o numero de candidatura respectivo da pessoa candidata.
-   * @return int return number of candidate
-   */
-  public int getNumber() {
-    return this.number;
   }
 
 }
