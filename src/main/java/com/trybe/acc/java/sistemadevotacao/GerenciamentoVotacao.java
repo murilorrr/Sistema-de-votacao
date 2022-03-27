@@ -1,6 +1,9 @@
 package com.trybe.acc.java.sistemadevotacao;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class GerenciamentoVotacao {
 
@@ -48,23 +51,20 @@ public class GerenciamentoVotacao {
 
   /**
    * Metodo para votar em uma pessoa candidata.
+   * Somar um voto na pessoa votada e subtrai o direito de voto na pessoa votante.
    * @param personsCpf is cpf da pessoa eleitora
    * @param numeroPessoaCandidata is integer, numero da pessoa candidatas
    * @author Murilo
    */
   public void votar(String personsCpf, int numeroPessoaCandidata) {
-    // *IMPORTANTE: cada pessoa eleitora só pode votar uma única vez.
-    // * tenho que somar um voto na pessoa votada e subtrair o direito de voto na pessoa votante
 
     for (PessoaEleitora eleitor : listPessoasEleitoras) {
       if (eleitor.getCpf().equals(personsCpf)) {
-        eleitor.vote();
-      }
-    }
-
-    for (PessoaCandidata candidato : listPessoasCandidatas) {
-      if (candidato.getNumero() == numeroPessoaCandidata) {
-        candidato.beVote();
+        for (PessoaCandidata candidato : listPessoasCandidatas) {
+          if (candidato.getNumero() == numeroPessoaCandidata) {
+            eleitor.vote(candidato);
+          }
+        }
       }
     }
   }
@@ -74,18 +74,43 @@ public class GerenciamentoVotacao {
    * @author Murilo
    */
   public void mostrarResultado() {
+    if (quantidadeTotalDeVotos() == 0) {
+      return;
+    }
+
+    DecimalFormat decimalFormatUS = new DecimalFormat(
+        "#,###.#", new DecimalFormatSymbols(Locale.US));
+        // System.out.print(decimalFormatUS.format(percentMinor));
+    int totalDeVotos = quantidadeTotalDeVotos();
+
     // para candidato printa o numero de votos dele senao for 0
     for (PessoaCandidata pessoaCandidata : listPessoasCandidatas) {
-      System.out.println("Nome: "
-          + pessoaCandidata.getNome()
-          + " "
-          + pessoaCandidata.votesView()
-          + "votos "
-          + "( " + "porcentagem tal de votos"
-          + " )"
-      );
-      // TODO implementar a porcentagem
+      if (pessoaCandidata.votesView() > 0) {
+        float votosEmPorcentagem = ((float) pessoaCandidata.votesView() / totalDeVotos) * 100;
+        System.out.println("Nome: "
+            + pessoaCandidata.getNome()
+            + " - "
+            + pessoaCandidata.votesView()
+            + " votos "
+            + "( " + decimalFormatUS.format(votosEmPorcentagem)
+            + "% )"
+        );
+      }
     }
+    System.out.println("Total de votos: " + totalDeVotos);
+  }
+
+  /**
+   * Metodo que retorna a quantidade total de votos.
+   * @return integer Quantidade total de votos.
+   * @author Murilo
+   */
+  private int quantidadeTotalDeVotos() {
+    int total = 0;
+    for (PessoaCandidata pessoaCandidata: listPessoasCandidatas) {
+      total += pessoaCandidata.votesView();
+    }
+    return total;
   }
 
   /**

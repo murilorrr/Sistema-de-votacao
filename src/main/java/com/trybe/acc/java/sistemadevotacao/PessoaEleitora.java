@@ -62,9 +62,10 @@ public class PessoaEleitora extends Pessoa {
   /**
    * Metodo que abstrai o voto do eleitor.
    */
-  public void vote() {
+  public void vote(PessoaCandidata candidato) {
     if (isElegitToVote()) {
       System.out.println("Esta pessoa votou em alguem");
+      candidato.beVote();
       setIsElegitToVote(false);
     } else {
       System.out.println("Pessoa eleitora já votou!");
