@@ -80,7 +80,6 @@ public class GerenciamentoVotacao {
 
     DecimalFormat decimalFormatUS = new DecimalFormat(
         "#,###.#", new DecimalFormatSymbols(Locale.US));
-        // System.out.print(decimalFormatUS.format(percentMinor));
     int totalDeVotos = quantidadeTotalDeVotos();
 
     // para candidato printa o numero de votos dele senao for 0

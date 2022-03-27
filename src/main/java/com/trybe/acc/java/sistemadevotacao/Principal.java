@@ -124,7 +124,7 @@ public class Principal {
         System.out.println("Entre com o número da pessoa candidata:");
         int numeroPessoaCandidata = scanner.nextInt();
         votacao.votar(cpfNumber, numeroPessoaCandidata);
-      } else if (input == 2){
+      } else if (input == 2) {
         votacao.mostrarResultado();
       }
     }
